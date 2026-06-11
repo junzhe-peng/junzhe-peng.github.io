@@ -179,6 +179,45 @@ body:has(.profile-home) #content-inner.layout {
   font-size: 14px;
 }
 
+.publication-list {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.publication-list li {
+  margin: 0 0 16px;
+  padding-left: 2px;
+}
+
+.publication-list li:last-child {
+  margin-bottom: 0;
+}
+
+.pub-title,
+.pub-authors {
+  margin: 0;
+}
+
+.pub-title {
+  color: var(--profile-text);
+  line-height: 1.55;
+}
+
+.pub-venue {
+  color: var(--profile-muted);
+}
+
+.pub-link {
+  margin-left: 6px;
+  white-space: nowrap;
+}
+
+.pub-authors {
+  color: var(--profile-muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
 body:has(.profile-home) #footer {
   background: #ffffff;
   color: var(--profile-muted);
