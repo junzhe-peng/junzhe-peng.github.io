@@ -218,6 +218,65 @@ body:has(.profile-home) #content-inner.layout {
   line-height: 1.5;
 }
 
+.media-coverage {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px dashed var(--profile-line);
+}
+
+.media-coverage h4 {
+  margin: 0 0 12px;
+  color: var(--profile-text);
+  font-size: 17px;
+}
+
+.media-groups {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.media-group {
+  padding: 14px;
+  border: 1px solid var(--profile-line);
+  border-radius: 6px;
+  background: #fbfcfe;
+}
+
+.media-group-title {
+  margin-bottom: 8px;
+  color: var(--profile-text);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.media-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.media-list li {
+  margin-bottom: 10px;
+}
+
+.media-list li:last-child {
+  margin-bottom: 0;
+}
+
+.media-title {
+  display: block;
+  line-height: 1.45;
+}
+
+.media-meta {
+  display: block;
+  margin-top: 2px;
+  color: var(--profile-muted);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
 body:has(.profile-home) #footer {
   background: #ffffff;
   color: var(--profile-muted);
@@ -258,5 +317,9 @@ body:has(.profile-home) #footer .copyright {
   .profile-list li {
     grid-template-columns: 1fr;
     gap: 2px;
+  }
+
+  .media-groups {
+    grid-template-columns: 1fr;
   }
 }
