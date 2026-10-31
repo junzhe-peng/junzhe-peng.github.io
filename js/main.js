@@ -28,12 +28,14 @@ document.addEventListener('DOMContentLoaded', () => {
       btf.overflowPaddingR.add()
       btf.animateIn(document.getElementById('menu-mask'), 'to_show 0.5s')
       document.getElementById('sidebar-menus').classList.add('open')
+      document.getElementById('toggle-menu').setAttribute('aria-expanded', 'true')
       mobileSidebarOpen = true
     },
     close: () => {
       btf.overflowPaddingR.remove()
       btf.animateOut(document.getElementById('menu-mask'), 'to_hide 0.5s')
       document.getElementById('sidebar-menus').classList.remove('open')
+      document.getElementById('toggle-menu').setAttribute('aria-expanded', 'false')
       mobileSidebarOpen = false
     }
   }
@@ -731,9 +733,13 @@ document.addEventListener('DOMContentLoaded', () => {
    */
   const clickFnOfSubMenu = () => {
     const handleClickOfSubMenu = e => {
-      const target = e.target.closest('.site-page.group')
+      const target = e.target.closest('.site-page')
       if (!target) return
-      target.classList.toggle('hide')
+      if (target.classList.contains('group')) {
+        target.classList.toggle('hide')
+      } else if (target.hasAttribute('href')) {
+        sidebarFn.close()
+      }
     }
 
     const menusItems = document.querySelector('#sidebar-menus .menus_items')
